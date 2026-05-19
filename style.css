@@ -1,0 +1,392 @@
+/* Animação inicial */
+#splashScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease;
+}
+
+#logoAnimation {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: animateLogo 20s linear infinite, floatLogo 3s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+@keyframes animateLogo {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+
+@keyframes floatLogo {
+    0% {
+        transform: translateY(0) rotateX(0deg) rotateY(0deg);
+    }
+    100% {
+        transform: translateY(-20px) rotateX(5deg) rotateY(5deg);
+    }
+}
+
+@keyframes spinLogo {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Estilos do sistema */
+body {
+    background-color: #1a1a1a;
+    color: #e5e7eb;
+}
+
+.phone-card {
+    transition: all 0.3s ease;
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+}
+.phone-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border-color: #666;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: #2d2d2d;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    color: #e5e7eb;
+    border: 1px solid #444;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+.edit-btn, .delete-btn, .installment-btn {
+    transition: all 0.2s ease;
+    background-color: #3d3d3d;
+    color: #e5e7eb;
+}
+
+.edit-btn:hover {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #ef4444;
+    color: white;
+}
+
+.installment-btn:hover {
+    background-color: #10b981;
+    color: white;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.checklist-item input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.checklist-item input[type="number"] {
+    width: 60px;
+    margin-left: 8px;
+    background-color: #3d3d3d;
+    color: #e5e7eb;
+    border: 1px solid #555;
+}
+
+.photo-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    border: 2px solid #555;
+    border-radius: 4px;
+}
+
+.photo-thumbnail:hover {
+    border-color: #3b82f6;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-available {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+}
+
+.status-sold {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.stats-card {
+    transition: all 0.3s ease;
+    border-left: 4px solid;
+    background-color: #2d2d2d;
+}
+
+.stats-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.stats-card.total-stock {
+    border-left-color: #3b82f6;
+}
+
+.stats-card.total-sales {
+    border-left-color: #10b981;
+}
+
+.stats-card.stock-value {
+    border-left-color: #f59e0b;
+}
+
+.stats-card.total-invested {
+    border-left-color: #ef4444;
+}
+
+.installment-option {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: #3d3d3d;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #444;
+}
+
+.installment-option:hover {
+    background-color: #4d4d4d;
+}
+
+#logoPreview {
+    max-width: 150px;
+    max-height: 80px;
+    margin-top: 10px;
+}
+
+.custom-checklist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.remove-checklist-item {
+    margin-left: 8px;
+    color: #ef4444;
+    cursor: pointer;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.rate-edit-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 2px;
+    background-color: #3d3d3d;
+    color: #e5e7eb;
+}
+
+.rate-edit-btn {
+    margin-left: 8px;
+    color: #3b82f6;
+    cursor: pointer;
+}
+
+.rate-edit-btn:hover {
+    text-decoration: underline;
+}
+
+.pdf-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.pdf-photo-thumbnail {
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+    border: 1px solid #555;
+}
+
+.checklist-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.checklist-table th, .checklist-table td {
+    border: 1px solid #555;
+    padding: 8px;
+    text-align: left;
+}
+
+.checklist-table th {
+    background-color: #3d3d3d;
+}
+
+.checklist-table tr:nth-child(even) {
+    background-color: #3d3d3d;
+}
+
+.selected-installment {
+    background-color: rgba(59, 130, 246, 0.2);
+    border: 1px solid #3b82f6;
+}
+
+.signature-line {
+    border-top: 1px solid #e5e7eb;
+    width: 300px;
+    margin-top: 60px;
+}
+
+/* Form elements */
+input, select, textarea {
+    background-color: #3d3d3d;
+    color: #e5e7eb;
+    border: 1px solid #555;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 1px #3b82f6;
+}
+
+/* Buttons */
+button {
+    transition: all 0.2s ease;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Search and filter */
+#searchInput, #brandFilter, #statusFilter {
+    background-color: #3d3d3d;
+    color: #e5e7eb;
+    border: 1px solid #555;
+}
+
+/* Store header */
+.store-header {
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+}
+
+/* Stats icons */
+.stats-icon {
+    background-color: rgba(255, 255, 255, 0.1);
+}
