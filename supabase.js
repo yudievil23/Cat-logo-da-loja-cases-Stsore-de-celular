@@ -9,7 +9,7 @@
 // NUNCA use a service_role key aqui
 // =============================================================
 
-const SUPABASE_URL = "COLE_AQUI_A_URL_DO_SUPABASE";
-const SUPABASE_ANON_KEY = "COLE_AQUI_A_ANON_KEY";
+const SUPABASE_URL = "https://sdghwhjxnypyrznctyrf.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNkZ2h3aGp4bnlweXJ6bmN0eXJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxODQ3NjQsImV4cCI6MjA5NDc2MDc2NH0.jhRoMF6QqV13fbH7Mq4-Qk4acbZRnWNNcBRfOe4_FjQ";
 
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
